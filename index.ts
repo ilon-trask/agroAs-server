@@ -6,8 +6,8 @@ import cors from "cors";
 import morgan from "morgan";
 import sequelize from "./db";
 import jwt from "jsonwebtoken";
-import dotenv from "dotenv"
-dotenv.config()
+import dotenv from "dotenv";
+dotenv.config();
 import * as trpcExpress from "@trpc/server/adapters/express";
 
 export type AppRouter = typeof appRouter;
