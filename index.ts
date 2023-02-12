@@ -6,7 +6,8 @@ import cors from "cors";
 import morgan from "morgan";
 import sequelize from "./db";
 import jwt from "jsonwebtoken";
-
+import dotenv from "dotenv"
+dotenv.config()
 import * as trpcExpress from "@trpc/server/adapters/express";
 
 export type AppRouter = typeof appRouter;
@@ -84,7 +85,7 @@ app.use(
   })
 );
 
-const port = 5000;
+const port = process.env.PORT|| 5000;
 app.listen(port, async () => {
   await sequelize.sync();
   console.log(`🚀 Server listening on port ${port}`);
